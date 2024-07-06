@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require('cors') //needed for connection between backend and frontend of the app
 const app = express()
 
+
 const upload = require('./routes/upload')
 const minesweeper = require('./routes/mineSweeper')
 
