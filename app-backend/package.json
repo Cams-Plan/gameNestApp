@@ -1,0 +1,37 @@
+{
+  "name": "app-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "dotenvx run --env-file=.env.dev -- nodemon index.js",
+    "dev:db": "docker run --rm -d -p 9040:27017 --name fps-app-dev mongo",
+    "open-dev-db": "docker exec -it fps-app-dev mongosh",
+    "seed-user": "dotenvx run --env-file=.env.dev -- node ./database/usersSeed.js",
+    "seed-token": "dotenvx run --env-file=.env.dev -- node ./database/tokensSeed.js",
+    "seed-shoppingList": "dotenvx run --env-file=.env.dev -- node ./database/shoppingListsSeed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^0.30.0",
+    "aws-sdk": "^2.1618.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^6.3.4"
+  }
+}
