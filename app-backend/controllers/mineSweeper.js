@@ -22,7 +22,7 @@ async function uploadScoreById(req, res){
 async function getPlayerScoresById(req, res){
     const playerId = req.params
     try {
-        // upload the player's score using the playerId as the primary key
+        // get the player's scores using the playerId as the primary key
     } catch (error) {
         
     }
