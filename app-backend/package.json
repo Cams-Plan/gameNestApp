@@ -5,10 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "dotenvx run --env-file=.env.dev -- nodemon index.js",
-    "dev:db": "docker run --rm -d -p 9040:27017 --name fps-app-dev mongo",
-    "open-dev-db": "docker exec -it fps-app-dev mongosh",
-    "seed-user": "dotenvx run --env-file=.env.dev -- node ./database/usersSeed.js",
-    "seed-token": "dotenvx run --env-file=.env.dev -- node ./database/tokensSeed.js",
+    "dev:db": "dotenvx run --env-file=.env.dev -- node ./database/setup.js",
     "seed-shoppingList": "dotenvx run --env-file=.env.dev -- node ./database/shoppingListsSeed.js"
   },
   "keywords": [],
@@ -24,7 +21,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.12.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
