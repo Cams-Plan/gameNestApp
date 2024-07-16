@@ -6,7 +6,6 @@ const app = express()
 const upload = require('./routes/upload')
 const minesweeper = require('./routes/mineSweeper')
 
-module.exports= app
 
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
@@ -15,7 +14,7 @@ app.use(express.urlencoded({ limit: '2mb', extended: true }));
 app.use("/imageupload", upload);
 app.use("/gn-minesweeper", minesweeper);
 
-
+module.exports = app
 
 // CATCH ALLS
 
@@ -42,4 +41,5 @@ app.delete("/*", (req,res) => {
         "error": "request not allowed".toUpperCase()
     }) 
 })
+
 
